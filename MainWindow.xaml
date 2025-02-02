@@ -8,8 +8,41 @@
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         Title="ToDo-ist" Height="450" Width="400">
-    <Grid>
 
+    <Window.Resources>
+        
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="2.5"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="100"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Duration="0:0:0.3"  To="40"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Duration="0:0:0.3"  To="110"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Duration="0:0:0.3"  To="25"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Duration="0:0:0.3"  To="100"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        
+    </Window.Resources>
+
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="7*"/>
