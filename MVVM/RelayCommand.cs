@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Todo_App.MVVM
 {
-    internal class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         private Action<object> _execute;
         private Func<object,bool> canExecute;

@@ -17,9 +17,9 @@ namespace Todo_App
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel mainViewModel = new MainViewModel();
+        
 
-        public MainWindow()
+        public MainWindow(MainViewModel mainViewModel)
         {
             DataContext = mainViewModel;
             InitializeComponent();

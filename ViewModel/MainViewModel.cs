@@ -7,12 +7,8 @@ using Task = Todo_App.Model.Task;
 
 namespace Todo_App.ViewModel
 {
-    internal class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
-        public ObservableCollection<Task> Tasks { get; set; }
-
-
-
         public RelayCommand addTaskCommand => new RelayCommand(execute => AddTask(), canExecute => true);
         public RelayCommand deleteTaskCommand => new RelayCommand(execute => DeleteTask(), canExecute => (SelectedTask != null));
         public RelayCommand clearTaskCommand => new RelayCommand(execute => ClearTask(), canExecute => true);
